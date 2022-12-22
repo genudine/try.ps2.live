@@ -158,11 +158,18 @@ export default function HelpLogicalAnd() {
                 <div className={styles.event}>
                   <b>Death</b>
                   <br />
-                  On Connery, Silzz killed Conflictt
+                  On Connery,{" "}
+                  <span title="Do not pat this cat. Or do. I'm not a cop.">
+                    Silzz
+                  </span>{" "}
+                  killed Conflictt
                 </div>
                 <div>--&gt;</div>
                 <div className={styles.matcher}>
-                  Silzz is in character list
+                  <span title="Do not pat this cat. Or do. I'm not a cop.">
+                    Silzz
+                  </span>{" "}
+                  is in character list
                   <br />
                   <span className={styles.and}>AND</span>
                   <br />
