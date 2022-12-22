@@ -187,10 +187,15 @@ export default function ESSConfigurator(params: Params) {
             <td className={styles.label}>EVENTS</td>
             <td className={c(styles.option, styles.checkboxes)}>
               {[
+                "AchievementEarned",
+                "BattleRankUp",
+                "ContinentLock",
+                "ContinentUnlock",
                 "Death",
                 "FacilityControl",
                 "GainExperience",
                 "ItemAdded",
+                "SkillAdded",
                 "MetagameEvent",
                 "PlayerFacilityCapture",
                 "PlayerFacilityDefend",
@@ -288,9 +293,9 @@ export default function ESSConfigurator(params: Params) {
               </select>
               &nbsp;&nbsp; Characters &nbsp;&nbsp;&nbsp;{" "}
               <span className={styles.context}>
-                —&nbsp;&nbsp;<b>AND</b> will match both world and character.{" "}
-                <b>OR</b> will match one or the other. If you want to match
-                every character, choose AND.
+                —&nbsp;&nbsp;Changes backend event matching behavior. For
+                example, all Deaths on Connery needs <b>AND</b>.{" "}
+                <Link href="/help/logical-and">See this diagram.</Link>
               </span>
             </td>
           </tr>
@@ -318,8 +323,6 @@ export default function ESSConfigurator(params: Params) {
           </tr>
         </tbody>
       </table>
-      <div></div>
-      <div></div>
     </div>
   );
 }
