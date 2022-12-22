@@ -184,7 +184,45 @@ export default function ESSConfigurator(params: Params) {
             </td>
           </tr>
           <tr>
-            <td className={styles.label}>EVENTS</td>
+            <td className={styles.label}>WORLD EVENTS</td>
+            <td className={c(styles.option, styles.checkboxes)}>
+              {[
+                "ContinentLock",
+                "ContinentUnlock",
+                "FacilityControl",
+                "MetagameEvent",
+              ].map((ev) => {
+                const checked = params.config.events.includes(ev);
+                return (
+                  <div
+                    key={ev}
+                    className={c(
+                      styles.stackedCheckbox,
+                      checked && styles.checked
+                    )}
+                  >
+                    <label htmlFor={`event-${ev}`}>{ev}</label>
+                    <input
+                      onChange={(e) => {
+                        params.onUpdate({
+                          ...params.config,
+                          events: e.target.checked
+                            ? [...(params.config.events as []), ev]
+                            : params.config.events.filter((e) => e !== ev),
+                        });
+                      }}
+                      type="checkbox"
+                      value="all"
+                      checked={checked}
+                      id={`event-${ev}`}
+                    />
+                  </div>
+                );
+              })}
+            </td>
+          </tr>
+          <tr>
+            <td className={styles.label}>CHARACTER EVENTS</td>
             <td className={c(styles.option, styles.checkboxes)}>
               {[
                 "AchievementEarned",
