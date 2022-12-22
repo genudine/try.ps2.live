@@ -21,7 +21,8 @@
     font-weight: 700;
     font-size: 0.7em;
     background-color: #1c1925;
-    padding: 2px;
+    padding: 5px;
+    padding-top: 7px; 
 }
 
 /* on wide screen, use 1 row 2 column
@@ -31,3 +32,11 @@
         grid-template-rows: 1fr;
     }
 } */
+
+.stream {
+    font-variant-ligatures: normal;
+}
+
+.stream pre {
+    font-family: inherit;
+}
