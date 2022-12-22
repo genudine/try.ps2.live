@@ -294,7 +294,7 @@ export default function ESSConfigurator(params: Params) {
               &nbsp;&nbsp; Characters &nbsp;&nbsp;&nbsp;{" "}
               <span className={styles.context}>
                 —&nbsp;&nbsp;Changes backend event matching behavior. For
-                example, all Deaths on Connery needs <b>AND</b>.{" "}
+                example, all Deaths only on Connery needs <b>AND</b>.{" "}
                 <Link href="/help/logical-and">See this diagram.</Link>
               </span>
             </td>

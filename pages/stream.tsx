@@ -18,10 +18,10 @@ export default function Stream() {
     baseUrl: "wss://push.planetside2.com/streaming",
     worlds: "all",
     charactersRaw: "",
-    events: [],
+    events: ["Death", "VehicleDestroy"],
     expFilterRaw: "",
-    logicalAndCharactersWithWorlds: false,
-    // ...JSON.parse((router.query.c as string) || "{}"), // If server can see it, lets try it...
+    logicalAndCharactersWithWorlds: true,
+    ...JSON.parse((router.query.c as string) || "{}"), // If server can see it, lets try it...
   });
   const [streamState, setStreamState] = useState<"stopped" | "started">(
     "stopped"

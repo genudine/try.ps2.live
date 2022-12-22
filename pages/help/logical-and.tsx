@@ -62,7 +62,7 @@ export default function HelpLogicalAnd() {
           </div>
         </div>
         <div>===&gt;</div>
-        <div className={styles.stream}>Send event =&gt;</div>
+        <div className={styles.stream}>Send event ✅</div>
       </div>
       <div className={c(styles.chart)}>
         <div className={styles.event}>
@@ -86,7 +86,7 @@ export default function HelpLogicalAnd() {
           </div>
         </div>
         <div>===&gt;</div>
-        <div className={styles.stream}>Send event =&gt;</div>
+        <div className={styles.stream}>Send event ✅</div>
       </div>
       <div className={c(styles.chart)}>
         <div
@@ -100,7 +100,80 @@ export default function HelpLogicalAnd() {
         <div>--&gt; IF </div>
         <div className={styles.matcher}>world matches</div>
         <div>===&gt;</div>
-        <div className={styles.stream}>Send event =&gt;</div>
+        <div className={styles.stream}>Send event ✅</div>
+      </div>
+      <div>
+        <h2>Examples</h2>
+        <p>
+          &gt;&gt; Subscribed to <b>events: [ Death ]</b>,{" "}
+          <b>characters: [ all ]</b>, and <b>worlds: [ Connery ]</b>
+          <br />
+          <br />
+          <br />
+        </p>
+        <div>
+          <div>
+            <span className={styles.or}>OR</span> filtering (default behavior):
+            <br />
+            <br />
+            <div>
+              <div className={styles.chart}>
+                <div className={styles.event}>
+                  <b>Death</b>
+                  <br />
+                  On Emerald, Wrel killed Higby{" "}
+                </div>
+                <div>--&gt;</div>
+                <div className={styles.matcher}>Wrel is in character list</div>
+                <div>===&gt;</div>
+                <div className={c(styles.stream)}>Sending event ✅</div>
+              </div>
+            </div>
+          </div>
+          <span className={styles.and}>AND</span> filtering:
+          <br />
+          <br />
+          <div>
+            <div className={styles.chart}>
+              <div className={styles.event}>
+                <b>Death</b>
+                <br />
+                On Emerald, Wrel killed Higby{" "}
+              </div>
+              <div>--&gt;</div>
+              <div className={styles.matcher}>
+                Wrel is in character list
+                <br />
+                <b>EXCEPT</b>
+                <br />
+                Emerald is NOT in world list
+              </div>
+              <div>===&gt;</div>
+              <div className={c(styles.stream, styles.streamRejected)}>
+                Not sending event ❌
+              </div>
+            </div>
+            <div>
+              <div className={styles.chart}>
+                <div className={styles.event}>
+                  <b>Death</b>
+                  <br />
+                  On Connery, Silzz killed Conflictt
+                </div>
+                <div>--&gt;</div>
+                <div className={styles.matcher}>
+                  Silzz is in character list
+                  <br />
+                  <span className={styles.and}>AND</span>
+                  <br />
+                  Connery is in world list
+                </div>
+                <div>===&gt;</div>
+                <div className={c(styles.stream)}>Sending event ✅</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
