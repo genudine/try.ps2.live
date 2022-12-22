@@ -78,7 +78,7 @@ export default function Stream() {
             </span>{" "}
             ]
           </div>
-          <p className={c(firaCode.className, styles.stream)}>
+          <div className={c(firaCode.className, styles.stream)}>
             <pre>
               &lt;&lt;==[META] Will connect to {config.baseUrl}?environment=
               {config.environment}&service-id=s:{config.serviceID}
@@ -119,7 +119,7 @@ export default function Stream() {
                 2
               )}
             </pre>
-          </p>
+          </div>
         </div>
       </div>
     </div>
