@@ -1,0 +1,128 @@
+.configTable {
+  border-spacing: 0 0.6em;
+  border-collapse: separate;
+  width: 100%;
+}
+
+
+.urlSelect {
+  appearance: auto;
+  background-color: #00000022;
+  color: #0088ff;
+  font-family: inherit;
+  margin: 0;
+  padding: 2px;
+  border-radius: 3px;
+  border: 0 solid transparent;
+  font-size: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: 0;
+}
+
+.urlSelect:hover, .urlSelect:focus {
+  background-color: #00000088;
+  border-color: #0077ee;
+}
+
+input.urlSelect {
+  text-align: left;
+  width: 5em;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 0.9em;
+  border-right: 1px solid #fff;
+  padding: 0 1em;
+  text-align: right;
+}
+
+.option {
+  padding-left: 1em;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stackedCheckbox {
+  background-color: #00000088;
+  margin: 0 0.2em;
+  padding: 0.15em 0.35em;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.stackedCheckbox.checked {
+  background-color: #0a8655;
+}
+
+.stackedCheckbox.disabled {
+  background-color: #00000088;
+  color: #888888;
+}
+
+.stackedCheckbox.checked.disabled {
+  background-color: #00aa6655;
+  color: inherit;
+}
+
+.stackedCheckbox > label {
+  cursor: pointer;
+}
+
+.stackedCheckbox > input {
+  cursor: pointer;
+  appearance: none;
+  position: absolute;
+}
+
+.textInput {
+  background-color: #00000022;
+  color: #0088ff;
+  font-family: inherit;
+  margin: 0;
+  padding: 5px 5px;
+  border-radius: 3px;
+  border: 0 solid transparent;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.textInput::placeholder {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.context {
+  font-size: 0.7em;
+  color: #aaa;
+  font-style: italic;
+  position: relative;
+  top: -0.275em;
+}
+
+.context a {
+  color: #ffd700;
+  transition: all 0.2s ease-in-out;
+}
+
+.context a:hover {
+  color: #fff;
+}
+
+.transitionable {
+  transition: all 0.2s ease-in-out;
+}
+
+.rowDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
